@@ -17,17 +17,17 @@ module.exports.run = async function({
 }) {
   const input = args.join(' ');
   if (!input) {
-    api.sendMessage(`Please provide a question or statement after 'ai'. For example: 'ai What is the capital of France?'`, event.threadID, event.messageID);
+    api.sendMessage(`Oui moi je répond à toutes tes questions 🤸🏽‍♂️'`, event.threadID, event.messageID);
     return;
   }
-  api.sendMessage(`🔍 "${input}"`, event.threadID, event.messageID);
+  api.sendMessage(`🧘🏽‍♂️ "${input}"`, event.threadID, event.messageID);
   try {
     const {
       data
     } = await axios.get(`https://soyeon-api.onrender.com/api?prompt=${encodeURIComponent(input)}`);
     const response = data.response;
-    api.sendMessage(response + '\n\nhttps://bit.ly/create-chatbot-me', event.threadID, event.messageID);
+    api.sendMessage(response + '\n══════════════════\nhttps://www.facebook.com/sory.ronald.alexandre', event.threadID, event.messageID);
   } catch (error) {
-    api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
+    api.sendMessage(' Une erreur 🤧.', event.threadID, event.messageID);
   }
 };
