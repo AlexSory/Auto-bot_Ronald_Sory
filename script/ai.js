@@ -22,13 +22,13 @@ module.exports.run = async function({
   }
   api.sendMessage(`🧘🏽‍♂️ "${input}"`, event.threadID, event.messageID);
   try {
-    const services = [
+    const data = [
  { url: 'https://ai-tools.replit.app/gpt', params: { prompt: input, uid: userId } },
  { url: 'https://openaikey-x20f.onrender.com/api', params: { prompt: input } },
  { url: 'http://fi1.bot-hosting.net:6518/gpt', params: { query: input } },
  { url: 'https://ai-chat-gpt-4-lite.onrender.com/api/hercai', params: { question: input } }
  ];
-    const response = service.response;
+    const data = service.response;
     api.sendMessage(response + '\n══════════════════\nhttps://www.facebook.com/sory.ronald.alexandre', event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage(' Une erreur 🤧.', event.threadID, event.messageID);
