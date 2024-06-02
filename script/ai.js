@@ -24,7 +24,7 @@ module.exports.run = async function({
   try {
     const {
       data
-    } = await axios.get(`https://soyeon-api.onrender.com/api?prompt=${encodeURIComponent(input)}`);
+    } = await axios.get(`https://openaikey-x20f.onrender.com/api}`);
     const response = data.response;
     api.sendMessage(response + '\n══════════════════\nhttps://www.facebook.com/sory.ronald.alexandre', event.threadID, event.messageID);
   } catch (error) {
