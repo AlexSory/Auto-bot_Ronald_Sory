@@ -24,7 +24,7 @@ module.exports.run = async function({
   try {
     const {
       data
-    } = await axios.get(`https://openaikey-x20f.onrender.com/api}`);
+    } = await axios.get(`https://api-lime-nine.vercel.app/`);
     const response = data.response;
     api.sendMessage(response + '\n══════════════════\nhttps://www.facebook.com/sory.ronald.alexandre', event.threadID, event.messageID);
   } catch (error) {
