@@ -1,36 +1,29 @@
 const axios = require('axios');
+
 module.exports.config = {
-  name: 'ai',
-  version: '1.0.0',
-  role: 0,
-  hasPrefix: false,
-  aliases: ['gpt', 'openai'],
-  description: "An AI command powered by GPT-4",
-  usage: "Ai [promot]",
-  credits: 'Developer',
-  cooldown: 3,
+		name: "Ai",
+		version: 1.0,
+		credits: "OtinXSandip",
+		description: "AI",
+		hasPrefix: false,
+		usages: "{pn} [prompt]",
+		aliases: ["Ronald","bot"],
+		cooldown: 0,
 };
-module.exports.run = async function({
-  api,
-  event,
-  args
-}) {
-  const input = args.join(' ');
-  if (!input) {
-    api.sendMessage(`Oui moi je répond à toutes tes questions 🤸🏽‍♂️'`, event.threadID, event.messageID);
-    return;
-  }
-  api.sendMessage(`🧘🏽‍♂️ "${input}"`, event.threadID, event.messageID);
-  try {
-    const data = [
- { url: 'https://ai-tools.replit.app/gpt', params: { prompt: input, uid: userId } },
- { url: 'https://openaikey-x20f.onrender.com/api', params: { prompt: input } },
- { url: 'http://fi1.bot-hosting.net:6518/gpt', params: { query: input } },
- { url: 'https://ai-chat-gpt-4-lite.onrender.com/api/hercai', params: { question: input } }
- ];
-    const data = service.response;
-    api.sendMessage(response + '\n══════════════════\nhttps://www.facebook.com/sory.ronald.alexandre', event.threadID, event.messageID);
-  } catch (error) {
-    api.sendMessage(' Une erreur 🤧.', event.threadID, event.messageID);
-  }
+
+module.exports.run = async function ({ api, event, args }) {
+		try {
+				const prompt = args.join(" ");
+				if (!prompt) {
+						await api.sendMessage("Hey I'm your virtual assistant, ask me a question.", event.threadID);
+						return;
+				}
+
+				const response = await axios.get(`https://api.whahhh.${b}.co/test?prompt=${a}${apikey} `);
+				const answer = response.data.answer;
+
+				await api.sendMessage(answer, event.threadID);
+		} catch (error) {
+				console.error("Error:", error.message);
+		}
 };
